@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'rock-paper-scissors-ui';
+  title = 'Rock-Paper-Scissors Game';
+  playerOneMove = 'Press Play Round button';
+  playerTwoMove = 'Press Play Round button';
+  roundResult = '';
+
+
 }
