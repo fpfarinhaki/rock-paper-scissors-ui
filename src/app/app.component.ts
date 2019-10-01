@@ -26,4 +26,8 @@ export class AppComponent {
     })
   }
 
+  public restart() {
+    this.gameSession = new Gamesession();
+  }
+
 }
