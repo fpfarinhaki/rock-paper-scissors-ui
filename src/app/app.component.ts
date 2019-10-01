@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(private gameService: GamesessionService){
   }
   
-  gameSession: Gamesession = new Gamesession;
+  gameSession: Gamesession = new Gamesession();
   lastPlayedRound: Round = new Round();
  
   public playRound() {

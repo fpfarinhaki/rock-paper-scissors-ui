@@ -306,6 +306,7 @@
     <!-- Next Steps -->
   <h2>{{lastPlayedRound.roundResult}}</h2>
   <div class="card-container">
+      <h6>Player 1</h6>
       <div class="card">
         <p>{{lastPlayedRound.playerOneMove}}</p>
       </div>
@@ -317,29 +318,30 @@
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
     </div>
 
+    
     <div class="card">
         <p>{{lastPlayedRound.playerTwoMove}}</p>
     </div>
-
+    <h6>Player 2</h6>
+  </div>
+    <h6 left>Rounds Played: {{gameSession.roundsPlayed.length}}</h6>
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">Round</th>
             <th scope="col">Player 1 Move</th>
             <th scope="col">Player 2 Move</th>
             <th scope="col">Result</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let round of gameSession.roundsPlayed; let i = index">
-            <th scope="row">{{i + 1}}</th>
+          <tr *ngFor="let round of gameSession.roundsPlayed">
             <td>{{round.playerOneMove}}</td>
             <td>{{round.playerTwoMove}}</td>
             <td>{{round.roundResult}}</td>
           </tr>
         </tbody>
     </table>
-  </div>
+  
 
 
 
