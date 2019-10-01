@@ -15,8 +15,12 @@ export class GamesessionService {
     this.url = "http://localhost:8080/games/rps"
   }
 
-  public playARound(): Observable<Gamesession> {
-      return this.http.get<Gamesession>(this.url + '/round/play');
+  public playARound(gameSessionId?: string): Observable<Gamesession> {
+    let playRoundUrl = '/round/play';
+    if(gameSessionId) {
+      playRoundUrl = '/' + gameSessionId + playRoundUrl;
+    }
+    return this.http.get<Gamesession>(this.url + playRoundUrl);
   }
 
 }

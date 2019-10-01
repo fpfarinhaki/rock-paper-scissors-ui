@@ -14,12 +14,12 @@ export class AppComponent {
   constructor(private gameService: GamesessionService){
   }
   
-  gameSession: Gamesession; 
+  gameSession: Gamesession = new Gamesession;
   lastPlayedRound: Round = new Round();
  
   public playRound() {
-    let gameSession = this.gameService.playARound();
-    gameSession.subscribe(gameSession => {
+    let round = this.gameService.playARound(this.gameSession.id);
+    round.subscribe(gameSession => {
       console.log(gameSession);
       this.gameSession = gameSession;
       this.lastPlayedRound = gameSession.roundsPlayed[gameSession.roundsPlayed.length - 1]

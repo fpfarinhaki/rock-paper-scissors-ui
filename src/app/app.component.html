@@ -303,6 +303,8 @@
     <img width="200" alt="Rock-paper-scissors" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/256px-Rock-paper-scissors.svg.png">
   </a>
 
+    <!-- Next Steps -->
+  <h2>{{lastPlayedRound.roundResult}}</h2>
   <div class="card-container">
       <div class="card">
         <p>{{lastPlayedRound.playerOneMove}}</p>
@@ -319,9 +321,24 @@
         <p>{{lastPlayedRound.playerTwoMove}}</p>
     </div>
 
+    <table>
+        <thead>
+          <th>Round</th>
+          <th>Player 1 Move</th>
+          <th>Player 2 Move</th>
+          <th>Result</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let round of gameSession.roundsPlayed; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{round.playerOneMove}}</td>
+            <td>{{round.playerTwoMove}}</td>
+            <td>{{round.roundResult}}</td>
+          </tr>
+        </tbody>
+    </table>
   </div>
 
-  <!-- Next Steps -->
-  <h2>{{lastPlayedRound.roundResult}}</h2>
+
 
 <router-outlet></router-outlet>
