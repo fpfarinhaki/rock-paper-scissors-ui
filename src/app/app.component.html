@@ -321,16 +321,18 @@
         <p>{{lastPlayedRound.playerTwoMove}}</p>
     </div>
 
-    <table>
+    <table class="table">
         <thead>
-          <th>Round</th>
-          <th>Player 1 Move</th>
-          <th>Player 2 Move</th>
-          <th>Result</th>
+          <tr>
+            <th scope="col">Round</th>
+            <th scope="col">Player 1 Move</th>
+            <th scope="col">Player 2 Move</th>
+            <th scope="col">Result</th>
+          </tr>
         </thead>
         <tbody>
           <tr *ngFor="let round of gameSession.roundsPlayed; let i = index">
-            <td>{{i + 1}}</td>
+            <th scope="row">{{i + 1}}</th>
             <td>{{round.playerOneMove}}</td>
             <td>{{round.playerTwoMove}}</td>
             <td>{{round.roundResult}}</td>
