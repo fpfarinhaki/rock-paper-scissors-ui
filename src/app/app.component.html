@@ -304,27 +304,26 @@
   </a>
 
     <!-- Next Steps -->
-  <h2>{{lastPlayedRound.roundResult}}</h2>
-  <div class="card-container">
-      <h6>Player 1</h6>
-      <div class="card">
-        <p>{{lastPlayedRound.playerOneMove}}</p>
+  <!-- <h2>{{lastPlayedRound.roundResult}}</h2> -->
+  <div class="container-fluid">
+    <div class="row">
+       <div class="col-sm float-left">
+          <h6 class="float-left">Player 1</h6>
+          <img src="assets/img/{{lastPlayedRound.playerOneMove}}.png" alt=""
+           width="150px" height="150px" style="background: white"/>
+       </div>  
+       <div class="col-md">
+          <button class="btn btn-primary float-left" (click)="playRound()">Play Round</button>
+          <button type="button" class="btn btn-danger float-right" (click)="restart()">Restart Game</button>
+       </div>
+       <div class="col-sm float-right">
+          <h6 class="float-right">Player 2</h6>
+          <img src="assets/img/{{lastPlayedRound.playerTwoMove}}.png" alt="" 
+            width="150px" height="150px" style="background: white" />
       </div>
-    <div class="card" (click)="playRound()">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>
-
-      <span>Play Round</span>
-
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
     </div>
-
+    </div>
     
-    <div class="card">
-        <p>{{lastPlayedRound.playerTwoMove}}</p>
-    </div>
-    <h6>Player 2</h6>
-  </div>
-    <button type="button" class="btn btn-danger" (click)="restart()">Restart Game</button>
     <h6 left>Rounds Played: {{gameSession.roundsPlayed.length}}</h6>
     <table class="table">
         <thead>
@@ -336,8 +335,10 @@
         </thead>
         <tbody>
           <tr *ngFor="let round of gameSession.roundsPlayed">
-            <td>{{round.playerOneMove}}</td>
-            <td>{{round.playerTwoMove}}</td>
+            <td><img src="assets/img/{{round.playerOneMove}}.png" alt="" 
+              width="50px" height="50px" style="background: white"/></td>
+            <td><img src="assets/img/{{round.playerTwoMove}}.png" alt="" 
+              width="50px" height="50px" style="background: white" /></td>
             <td>{{round.roundResult}}</td>
           </tr>
         </tbody>

@@ -1,5 +1,7 @@
 export class Round {
+    
     playerOneMove: string;
     playerTwoMove: string;
-    roundResult: string;
+    roundResult: string;    
+
 }
