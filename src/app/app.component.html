@@ -305,44 +305,49 @@
 
     <!-- Next Steps -->
   <!-- <h2>{{lastPlayedRound.roundResult}}</h2> -->
-  <div class="container-fluid">
-    <div class="row">
-       <div class="col-sm float-left">
-          <h6 class="float-left">Player 1</h6>
-          <img src="assets/img/{{lastPlayedRound.playerOneMove}}.png" alt=""
-           width="150px" height="150px" style="background: white"/>
-       </div>  
-       <div class="col-md">
-          <button class="btn btn-primary float-left" (click)="playRound()">Play Round</button>
-          <button type="button" class="btn btn-danger float-right" (click)="restart()">Restart Game</button>
-       </div>
-       <div class="col-sm float-right">
-          <h6 class="float-right">Player 2 - This player Rocks!</h6>
-          <img src="assets/img/{{lastPlayedRound.playerTwoMove}}.png" alt="" 
-            width="150px" height="150px" style="background: white" />
+  <div class="container">
+    <div class="row justify-content-around">
+        <button class="btn btn-success col" (click)="playRound()">Play Round</button>
+        <button class="btn btn-danger col" (click)="restart()">Restart Game</button>
+        <button class="btn btn-info col">Statistics</button>
+    </div>
+    <div class="row justify-content-around">
+      <h6 class="col">Player 1</h6>
+      <h6 class="col ">Player 2 - This player Rocks!</h6>
+    </div>
+    <div class="row justify-content-around">
+      <div class="col-sm">
+        <img src="assets/img/{{lastPlayedRound.playerOneMove}}.png" alt="" width="120px" height="120px" class="w-75 mh-75 p-3"/>
       </div>
+      <div class="col-sm">
+        <img src="assets/img/{{lastPlayedRound.playerTwoMove}}.png" alt="" width="120px" height="120px" class="w-75 mh-75 p-3"/> 
+      </div>
+    </div>  
+    <div class="row justify-content-around">
+      <h6 left>Rounds Played: {{gameSession.roundsPlayed.length}}</h6>
     </div>
+    <div class="row justify-content-around">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Player 1 Move</th>
+              <th scope="col">Player 2 Move</th>
+              <th scope="col">Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let round of gameSession.roundsPlayed">
+              <td><img src="assets/img/{{round.playerOneMove}}.png" alt="" 
+                width="50px" height="50px" style="background: white"/></td>
+              <td><img src="assets/img/{{round.playerTwoMove}}.png" alt="" 
+                width="50px" height="50px" style="background: white" /></td>
+              <td class="badge badge-success mx-auto">{{round.roundResult | roundresult}}</td>
+            </tr>
+          </tbody>
+      </table>
     </div>
+  </div>
     
-    <h6 left>Rounds Played: {{gameSession.roundsPlayed.length}}</h6>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Player 1 Move</th>
-            <th scope="col">Player 2 Move</th>
-            <th scope="col">Result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let round of gameSession.roundsPlayed">
-            <td><img src="assets/img/{{round.playerOneMove}}.png" alt="" 
-              width="50px" height="50px" style="background: white"/></td>
-            <td><img src="assets/img/{{round.playerTwoMove}}.png" alt="" 
-              width="50px" height="50px" style="background: white" /></td>
-            <td class="badge badge-success mx-auto">{{round.roundResult | roundresult}}</td>
-          </tr>
-        </tbody>
-    </table>
   
 
 
