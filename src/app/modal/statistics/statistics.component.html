@@ -1,0 +1,32 @@
+<!-- Statistics Modal -->
+<div class="modal-header">
+    <h5 class="modal-title">Game Statistics</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <table class="table">
+        <thead class="thead-dark">
+            <th scope="rowgroup">Totals</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Rounds Played</th>
+                <td>{{totals.rounds}}</td>
+            </tr>
+            <tr>
+                <th>Draws</th>
+                <td>{{totals.draws}}</td>
+            </tr>
+            <tr>
+                <th>Player 1 Wins</th>
+                <td>{{totals.playerOneWins}}</td>
+            </tr>
+            <tr>
+                <th>Player 2 Wins</th>
+                <td>{{totals.playerTwoWins}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
