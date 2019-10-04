@@ -309,8 +309,8 @@
     <div class="row justify-content-around">
         <button class="btn btn-success col" (click)="playRound()">Play Round</button>
         <button class="btn btn-danger col" (click)="restart()">Restart Game</button>
-        <button class="btn btn-info col">Statistics</button>
-    </div>
+        <button class="btn btn-info col" (click)="showStatistics()">Statistics</button>
+      </div>
     <div class="row justify-content-around">
       <h6 class="col">Player 1</h6>
       <h6 class="col ">Player 2 - This player Rocks!</h6>
@@ -347,9 +347,5 @@
       </table>
     </div>
   </div>
-    
-  
-
-
 
 <router-outlet></router-outlet>

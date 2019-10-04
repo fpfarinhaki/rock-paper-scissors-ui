@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Gamesession } from '../domain/gamesession';
 import { Observable } from 'rxjs';
+import { Totals } from '../domain/totals';
 
 
 @Injectable({
@@ -21,6 +22,10 @@ export class GamesessionService {
       playRoundUrl = '/' + gameSessionId + playRoundUrl;
     }
     return this.http.get<Gamesession>(this.url + playRoundUrl);
+  }
+
+  public getTotals(): Observable<Totals> {
+      return this.http.get<Totals>(this.url + '/totals');
   }
 
 }
