@@ -7,6 +7,10 @@
 </div>
 
   <div class="container pt-2">
+    <p class="h1" *ngIf="gameSession.roundsPlayed.length == 0">
+        Let's Play Rock Paper Scissors!
+    </p>
+
     <div class="row justify-content-between pt-1">
         <button class="btn btn-success col" (click)="playRound()">Play Round</button>
         <button class="btn btn-danger col" (click)="restart()">Restart Game</button>
